@@ -41,6 +41,12 @@ header {
   background-image: url(images/mobile/image-header.jpg);
 }
 
+#mobile-menu-icon {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
 .menu {
   display: none;
 }
@@ -71,7 +77,8 @@ a.contact:hover {
   background-color: var(--white);
 }
 
-nav.mobile-menu {
+nav.mobile-menu ul {
+  list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,16 +94,19 @@ nav.mobile-menu {
   left: calc(100% - 25px);
 }
 
-nav.mobile-menu a {
-  color: var(--very-dark-grayish-blue);
+nav.mobile-menu ul li {
   margin-bottom: 40px;
 }
 
-nav.mobile-menu a:first-child {
+nav.mobile-menu a {
+  color: var(--very-dark-grayish-blue);
+}
+
+nav.mobile-menu ul li a:first-child {
   margin-top: 20px;
 }
 
-nav.mobile-menu a.contact {
+nav.mobile-menu ul li a.contact {
   background-color: var(--yellow);
 }
 
@@ -122,10 +132,26 @@ nav.mobile-menu a.contact {
   margin-top: 50px;
 }
 
+.grid-transform-img {
+  grid-area: transform-img;
+}
+
+.grid-transform-text {
+  grid-area: transform-text;
+}
+
+.grid-stand-out-img {
+  grid-area: stand-out-img;
+}
+
+.grid-stand-out-text {
+  grid-area: stand-out-text;
+}
+
 .features {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-areas: "transform-img" "transform-text" "stand-out-img" "stand-out-text";
   gap: 0;
 }
 
@@ -201,6 +227,11 @@ hr.link-border-yellow {
   background-color: #fdf3b8;
 }
 
+a.transform-link,
+a.stand-out-link {
+  width: max-content;
+}
+
 a.transform-link:hover hr {
   background-color: #eccd00 !important;
 }
@@ -274,7 +305,7 @@ h4 {
   background-image: url(images/mobile/image-gallery-orange.jpg);
 }
 .cone {
-    background-image: url(images/mobile/image-gallery-cone.jpg);
+  background-image: url(images/mobile/image-gallery-cone.jpg);
 }
 .sugar-cubes {
   background-image: url(images/mobile/image-gallery-sugar-cubes.jpg);
@@ -304,10 +335,10 @@ footer .footer-links {
   display: flex;
   justify-content: center;
   gap: 25px;
+  list-style: none;
 }
 
-footer .footer-links a:hover
-{
+footer .footer-links a:hover {
   color: var(--white);
 }
 
@@ -350,6 +381,11 @@ footer .social-links a svg:hover path {
   }
 
   .menu {
+    display: block;
+  }
+
+  .menu ul {
+    list-style: none;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -382,22 +418,6 @@ footer .social-links a svg:hover path {
 
   .feature-img div {
     padding: 0 25%;
-  }
-
-  .grid-transform-img {
-    grid-area: transform-img;
-  }
-
-  .grid-transform-text {
-    grid-area: transform-text;
-  }
-
-  .grid-stand-out-img {
-    grid-area: stand-out-img;
-  }
-
-  .grid-stand-out-text {
-    grid-area: stand-out-text;
   }
 
   .testimonials {
